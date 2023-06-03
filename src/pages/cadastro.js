@@ -87,7 +87,6 @@ function Cadastro() {
             switch (status) {
                 case 201:
                     e.target.reset();
-                    console.log(result.user);
                     alert(result.msg);
                     break;
                 case 400:

@@ -33,7 +33,6 @@ function Detalhes() {
             const result = await response.json();
             switch (status) {
                 case 200:
-                    console.log(result);
                     setNome(result["nome"]);
                     setSobrenome(result["sobrenome"]);
                     setNascimento(result["nascimento"]);
@@ -47,7 +46,7 @@ function Detalhes() {
                     alert(result.msg);
                     break;
                 default:
-                    console.log("Erro desconhecido!");
+                    alert("Erro desconhecido!");
                     break;
             }
         } catch (err) {
@@ -128,14 +127,13 @@ function Detalhes() {
             const result = await response.json();
             switch (status) {
                 case 200:
-                    console.log(result.msg);
                     alert(result.msg);
                     break;
                 case 400:
                     alert(result.msg);
                     break;
                 default:
-                    console.log("Erro desconhecido!");
+                    alert("Erro desconhecido!");
                     break;
             }
         } catch (err) {

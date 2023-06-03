@@ -32,7 +32,6 @@ function Listar() {
     }
 
     const getUserFilter = async () => {
-        console.log(userSearch);
         try {
             const response = await fetch('http://localhost:8080/user/busca/', {
                 method: 'POST',
@@ -45,7 +44,6 @@ function Listar() {
                 body: JSON.stringify(userSearch)
             });
             const result = await response.json();
-            console.log(result);
             if (userSearch.codigo !== 0 && response.status === 200) {
                 setUsers([result]);
             } else if(response.status === 200) {
@@ -90,7 +88,6 @@ function Listar() {
             const result = await response.json();
             switch (status) {
                 case 200:
-                    console.log(result.msg);
                     getUserFilter();
                     alert(result.msg);
                     break;
@@ -98,7 +95,7 @@ function Listar() {
                     alert(result.msg);
                     break;
                 default:
-                    console.log("Erro desconhecido!");
+                    alert("Erro desconhecido!");
                     break;
             }
         } catch (err) {
@@ -123,7 +120,6 @@ function Listar() {
             switch (status) {
                 case 200:
                     getUserList();
-                    console.log(result.msg);
                     getUserFilter();
                     alert(result.msg);
                     break;
@@ -131,7 +127,7 @@ function Listar() {
                     alert(result.msg);
                     break;
                 default:
-                    console.log("Erro desconhecido!");
+                    alert("Erro desconhecido!");
                     break;
             }
         } catch (err) {
